@@ -7,6 +7,7 @@
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border: 1px solid #e1e1ef;
+  flex: 1;
 }
 
 .burger-builder {
@@ -20,10 +21,6 @@ ul.ingredients_items {
   justify-content: center;
 }
 
-
-.ingredients {
-  flex: 1;
-}
 
 .ingredients_items {
   list-style-type: none;
@@ -70,3 +67,32 @@ ul.ingredients_items {
 .burger__ingredient-name {
   margin-top: 5px;
 }
+
+.clear-all-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 40px;
+    transition:0.3s;
+  }
+  
+  .clear-all-button:hover {
+    background-color: #e53935;
+  }
+
+  .burger-builder__title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items:center;
+}
+
+.clear-all-button:disabled {
+    background-color: #ccc; 
+    color: #aaa; 
+    cursor: not-allowed; 
+  }

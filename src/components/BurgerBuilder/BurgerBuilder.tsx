@@ -50,6 +50,10 @@ const BurgerBuilder = () => {
     );
     setBurgerIngredients(updatedIngredients);
   };
+  const clearAllIngredients = () => {
+    setBurgerIngredients([]);
+  };
+
   if (isLoading) return <Loader />;
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -57,7 +61,16 @@ const BurgerBuilder = () => {
 
   return (
     <div className="burger-builder">
-      <h1>Build you burger</h1>
+      <div className="burger-builder__title">
+        <h1>Build you burger</h1>
+        <button
+          className="clear-all-button"
+          onClick={clearAllIngredients}
+          disabled={burgerIngredients?.length === 0}
+        >
+          Clear All
+        </button>
+      </div>
       <div className="ingredients">
         <div className="burger-preview">
           <div className="burger">
