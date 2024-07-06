@@ -1,10 +1,7 @@
 import { BurgerBuilder } from "../../components";
+
 const Home = () => {
-  return (
-    <div>
-      <BurgerBuilder />
-    </div>
-  );
+  return <BurgerBuilder />;
 };
 
 export default Home;

@@ -1,9 +1,10 @@
 import { useQuery } from "react-query";
 import { fetchIngredients } from "../../lib/api/ingredients";
 import { useAuth } from "../../context";
-import { Ingredient } from "../../types";
-import { Loader } from "../../components";
+import { Ingredient as IngredientProps } from "../../types";
+import { Loader, Ingredient } from "../../components";
 import toast from "react-hot-toast";
+import "./BurgerBuilder.css";
 
 const BurgerBuilder = () => {
   const auth = useAuth();
@@ -11,7 +12,7 @@ const BurgerBuilder = () => {
     data: ingredients,
     isLoading,
     error,
-  } = useQuery<Ingredient[], Error>(
+  } = useQuery<IngredientProps[], Error>(
     ["ingredients", auth.token],
     () => fetchIngredients(auth.token),
     {
@@ -19,6 +20,7 @@ const BurgerBuilder = () => {
       onError: (error: any) => {
         // Check if the error has a status and if it is 401
         if (error.status === 401) {
+          toast.error("Session expired")
           console.log("Unauthorized error occurred. Logging out...");
           auth.logout();
         }
@@ -30,11 +32,12 @@ const BurgerBuilder = () => {
     toast.error(error.message);
   }
   return (
-    <div>
-      <ul>
-        {ingredients &&
+    <div className="ingredients">
+      <div>the burger</div>
+      <ul className="ingredients_items">
+        {Array.isArray(ingredients) &&
           ingredients.map((ingredient) => (
-            <li key={ingredient.id}>{ingredient.name}</li>
+            <Ingredient key={ingredient.id} {...ingredient} />
           ))}
       </ul>
     </div>

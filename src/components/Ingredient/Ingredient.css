@@ -1,0 +1,36 @@
+li.ingredient_item {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border: 1px solid #e1e1ef;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  position: relative;
+}
+
+li.ingredient_item:hover {
+  border-color: var(--primary-color);
+}
+li.ingredient_item:hover {
+  cursor: pointer;
+}
+
+img.ingredient_item__image {
+  max-width: 120px;
+}
+
+.ingredient_item__name {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.ingredient_item__container {
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+}
