@@ -34,16 +34,23 @@ const BurgerBuilder = () => {
   );
 
   const addIngredientToBurger = (ingredient: IngredientProps) => {
-    setBurgerIngredients([...burgerIngredients, ingredient]);
-  };
-
-  const removeIngredientFromBurger = (ingredientId: number) => {
-    const updatedIngredients = burgerIngredients.filter(
-      (ing) => ing.id !== ingredientId
-    );
+    const updatedIngredients = [
+      ...burgerIngredients,
+      {
+        ...ingredient,
+        index: burgerIngredients?.length,
+      },
+    ];
+    console.log(updatedIngredients)
     setBurgerIngredients(updatedIngredients);
   };
 
+  const removeIngredientFromBurger = (index: number) => {
+    const updatedIngredients = burgerIngredients.filter(
+      (ing) => ing.index !== index
+    );
+    setBurgerIngredients(updatedIngredients);
+  };
   if (isLoading) return <Loader />;
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -63,12 +70,12 @@ const BurgerBuilder = () => {
               />
             </div>
             {burgerIngredients.map((ingredient) => (
-              <div className="burger__ingredient" key={ingredient.id}>
+              <div className="burger__ingredient" key={ingredient.index}>
                 <img
                   src={`${process.env.REACT_APP_API_URL}/img/${ingredient.src}`}
                   alt={ingredient.name}
                   className="burger__ingredient-image"
-                  onClick={() => removeIngredientFromBurger(ingredient.id)}
+                  onClick={() => removeIngredientFromBurger(ingredient.index)}
                 />
               </div>
             ))}

@@ -13,6 +13,7 @@ export interface ModalProps {
 }
 
 export interface Ingredient {
+  index: number;
   id: number;
   name: string;
   src: string;
