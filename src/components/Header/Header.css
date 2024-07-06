@@ -16,3 +16,19 @@
 .logout-button {
   cursor: pointer;
 }
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-title svg{
+  color:red;
+  width:35px;
+  height:35px;
+}
+
+.header-title h1{
+  font-size:25px;
+}

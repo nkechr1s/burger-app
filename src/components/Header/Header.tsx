@@ -2,6 +2,7 @@ import { useAuth } from "../../context";
 import "./Header.css";
 import { useState } from "react";
 import { Modal } from "../../components";
+import { FaHamburger } from "react-icons/fa";
 
 const Header = () => {
   const auth = useAuth();
@@ -18,7 +19,10 @@ const Header = () => {
   return (
     <>
       <header className="header">
-        <h1 aria-label="A cool burger app">A cool burger app</h1>
+        <div className="header-title">
+          <FaHamburger />
+          <h1 aria-label="A cool burger app">Burger Now!</h1>
+        </div>
         {auth.isAuthenticated && (
           <>
             <img
