@@ -2,7 +2,7 @@ import { Ingredient as IngredientProps } from "../../types";
 import "./Ingredient.css";
 const Ingredient = ({ id, name, src, onClick }: IngredientProps) => {
   return (
-    <li className="ingredient-item" title={name} onClick={onClick}>
+    <li className="ingredient-item" title={name} onClick={onClick} data-testid="ingredient">
       {src && (
         <div className="ingredient__item-container">
           <img
