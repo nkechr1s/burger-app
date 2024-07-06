@@ -1,20 +1,10 @@
 import { render, screen } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
 import Modal from "./Modal";
-import { AuthProvider } from "../../context";
 
-const HeaderWithProvider = () => {
-  return (
-    <MemoryRouter>
-      <AuthProvider>
-        <Modal isOpen={true} />
-      </AuthProvider>
-    </MemoryRouter>
-  );
-};
+
 
 test("renders the Modal component", () => {
-  render(<HeaderWithProvider />);
+  render(<Modal isOpen={true} />);
   const modal = screen.getByTestId("modal");
   expect(modal).toBeInTheDocument();
 });
