@@ -13,6 +13,7 @@
 .burger-builder {
   max-width: 800px;
   margin: 0 auto;
+  padding: 20px 40px;
 }
 
 ul.ingredients_items {
@@ -20,7 +21,6 @@ ul.ingredients_items {
   gap: 10px;
   justify-content: center;
 }
-
 
 .ingredients_items {
   list-style-type: none;
@@ -36,7 +36,7 @@ ul.ingredients_items {
   max-height: 350px;
   overflow: auto;
   width: 100%;
-  margin-bottom:40px;
+  margin-bottom: 40px;
 }
 
 .burger {
@@ -47,7 +47,6 @@ ul.ingredients_items {
 
 .burger__bun {
   width: 240px;
-  margin-bottom: 10px;
 }
 
 .burger__bun-image {
@@ -57,6 +56,7 @@ ul.ingredients_items {
 
 .burger__ingredient {
   position: relative;
+  margin: -5px;
 }
 
 .burger__ingredient-image {
@@ -69,30 +69,30 @@ ul.ingredients_items {
 }
 
 .clear-all-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    height: 40px;
-    transition:0.3s;
-  }
-  
-  .clear-all-button:hover {
-    background-color: #e53935;
-  }
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 40px;
+  transition: 0.3s;
+}
 
-  .burger-builder__title {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    align-items:center;
+.clear-all-button:hover {
+  background-color: #e53935;
+}
+
+.burger-builder__title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
 }
 
 .clear-all-button:disabled {
-    background-color: #ccc; 
-    color: #aaa; 
-    cursor: not-allowed; 
-  }
+  background-color: #ccc;
+  color: #aaa;
+  cursor: not-allowed;
+}
