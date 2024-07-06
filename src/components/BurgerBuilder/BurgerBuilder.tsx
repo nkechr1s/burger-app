@@ -61,7 +61,7 @@ const BurgerBuilder = () => {
   }
 
   return (
-    <div className="burger-builder">
+    <div className="burger-builder" data-testid="burger-builder">
       <div className="burger-builder__title">
         <h1 aria-label="Build your burger">Build your burger</h1>
         <button
