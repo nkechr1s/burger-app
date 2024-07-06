@@ -51,7 +51,7 @@ const LoginForm = () => {
     setShowPassword((prev) => !prev);
   };
   return (
-    <form onSubmit={handleSubmitEvent} className="login-form">
+    <form onSubmit={handleSubmitEvent} className="login-form" data-testid="login-form">
       {/* I would suggest to use a react library for forms like react-hook-form*/}
       <h1 aria-label="Login to your account" className="form-title">
         🔐 Login to your account
