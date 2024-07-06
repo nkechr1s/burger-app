@@ -81,7 +81,7 @@ const BurgerBuilder = () => {
             </div>
           </div>
         </div>
-        <h2 className="ingredients_items__title">Ingredients</h2>
+        <h2>Ingredients</h2>
         <ul className="ingredients_items">
           {ingredients &&
             ingredients.map((ingredient) => (
