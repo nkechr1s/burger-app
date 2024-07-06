@@ -28,10 +28,10 @@ const LoginForm = () => {
   return (
     <form onSubmit={handleSubmitEvent}>
       <div className="form_control">
-        <label htmlFor="user-email">Email:</label>
+        <label htmlFor="name">Email:</label>
         <input
           type="text"
-          id="user-name"
+          id="name"
           name="name"
           value={input.name}
           onChange={handleInput}
