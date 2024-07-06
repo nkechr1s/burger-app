@@ -29,7 +29,7 @@ const LoginForm = () => {
   return (
     <form onSubmit={handleSubmitEvent} className="login-form">
       <h1 aria-label="Login to your account" className="form-title">
-        Login to your account
+      🔐 Login to your account
       </h1>
       <div className="form_control">
         <label htmlFor="name">Email:</label>
