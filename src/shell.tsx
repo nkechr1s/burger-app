@@ -5,7 +5,8 @@ import { Toaster } from "react-hot-toast";
 import { AuthProvider } from "./context";
 import PrivateRoute from "./routes";
 import { QueryClientProvider } from "react-query";
-import queryClient from "./lib/services/queryClient"; // Import the queryClient instance
+import queryClient from "./lib/services/queryClient";
+
 const Shell = () => {
   return (
     <QueryClientProvider client={queryClient}>

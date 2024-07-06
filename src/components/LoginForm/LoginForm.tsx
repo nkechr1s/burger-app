@@ -52,7 +52,7 @@ const LoginForm = () => {
   };
   return (
     <form onSubmit={handleSubmitEvent} className="login-form">
-      {/* I would suggest to use a react library for forms like react-hook form*/}
+      {/* I would suggest to use a react library for forms like react-hook-form*/}
       <h1 aria-label="Login to your account" className="form-title">
         🔐 Login to your account
       </h1>
