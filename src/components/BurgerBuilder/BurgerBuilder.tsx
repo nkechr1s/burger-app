@@ -102,7 +102,7 @@ const BurgerBuilder = () => {
         </div>
         <h2>Ingredients</h2>
         <ul className="ingredients_items">
-          {ingredients &&
+          {Array.isArray(ingredients) &&
             ingredients.map((ingredient) => (
               <Ingredient
                 key={ingredient.id}
