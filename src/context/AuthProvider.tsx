@@ -1,7 +1,7 @@
 import { useContext, createContext, ReactNode, useState } from "react";
 import { AuthContextType } from "../types";
 import { useNavigate } from "react-router-dom";
-
+import toast from "react-hot-toast";
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 interface AuthProviderProps {
@@ -22,14 +22,18 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
         body: JSON.stringify(data),
       });
       const res = await response.json();
-      if (res) {
+      if (res.token) {
         setToken(res.token);
         localStorage.setItem("site-token", res.token);
+        toast.success("You are now logged in!", {
+          duration: 5000,
+        });
         navigate("/");
         return;
       }
       throw new Error(res.message);
     } catch (err) {
+      toast.error("Incorrect username or password");
       console.error(err);
     }
   };

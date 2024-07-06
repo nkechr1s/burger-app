@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./LoginForm.css";
 import { useAuth } from "../../context";
-
+import toast from "react-hot-toast";
 const LoginForm = () => {
   const auth = useAuth();
   const [input, setInput] = useState({
@@ -14,7 +14,7 @@ const LoginForm = () => {
     if (input.name !== "" && input.password !== "") {
       auth.login(input);
     } else {
-      alert("Please provide valid input");
+      toast.error("Please provide valid input");
     }
   };
 
@@ -28,7 +28,9 @@ const LoginForm = () => {
 
   return (
     <form onSubmit={handleSubmitEvent} className="login-form">
-      <h1 aria-label="Login to your account" className="form-title">Login to your account</h1>
+      <h1 aria-label="Login to your account" className="form-title">
+        Login to your account
+      </h1>
       <div className="form_control">
         <label htmlFor="name">Email:</label>
         <input
@@ -37,7 +39,6 @@ const LoginForm = () => {
           name="name"
           value={input.name}
           onChange={handleInput}
-          required
         />
       </div>
       <div className="form_control">
@@ -48,7 +49,6 @@ const LoginForm = () => {
           name="password"
           value={input.password}
           onChange={handleInput}
-          required
         />
       </div>
       <button type="submit" className="primary-button">
