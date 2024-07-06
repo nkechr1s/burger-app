@@ -12,8 +12,7 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
   const [token, setToken] = useState(localStorage.getItem("site-token") || "");
   const navigate = useNavigate();
 
-  //TODO:REPLACE any
-  const loginAction = async (data: any) => {
+  const loginAction = async (data: string) => {
     try {
       const response = await fetch(`${process.env.REACT_APP_API_URL}/login`, {
         method: "POST",
