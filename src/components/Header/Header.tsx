@@ -18,7 +18,7 @@ const Header = () => {
   };
   return (
     <>
-      <header className="header">
+      <header className="header" data-testid="header">
         <div className="header-title">
           <FaHamburger />
           <h1 aria-label="A cool burger app">Burger Now!</h1>
@@ -31,6 +31,7 @@ const Header = () => {
               onClick={toggleModal}
               className="logout-button"
               title="Logout"
+              data-testid="toggle-modal-button"
             />
           </>
         )}
@@ -47,6 +48,7 @@ const Header = () => {
               title="logout"
               onClick={handleLogout}
               className="primary-button"
+              data-testid="logout-button"
             >
               logout
             </button>
@@ -54,6 +56,7 @@ const Header = () => {
               title="cancel"
               onClick={toggleModal}
               className="secondary-button"
+              data-testid="cancel-button"
             >
               Cancel
             </button>
