@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import Ingredient from "./Ingredient";
 import { mockData } from "../../__mocks__/mockIngredient";
 
-test("renders the component", () => {
+test("renders the Ingredient component", () => {
   render(
     <Ingredient
       index={0}
