@@ -62,7 +62,7 @@ const BurgerBuilder = () => {
   return (
     <div className="burger-builder">
       <div className="burger-builder__title">
-        <h1>Build you burger</h1>
+        <h1 aria-label="Build your burger">Build your burger</h1>
         <button
           className="clear-all-button"
           onClick={clearAllIngredients}
