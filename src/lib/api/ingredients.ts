@@ -1,3 +1,4 @@
+import FetchError from "../errors/FetchError";
 export const fetchIngredients = async (token: string) => {
   try {
     const response = await fetch(
@@ -11,12 +12,16 @@ export const fetchIngredients = async (token: string) => {
       }
     );
     if (!response.ok) {
-      throw new Error("Failed to fetch ingredients");
+      throw new FetchError("Failed to fetch ingredients", response.status);
     }
     const ingredients = await response.json();
     return ingredients;
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error fetching ingredients:", error);
-    throw new Error("Failed to fetch ingredients");
+    if (error instanceof FetchError) {
+      throw error;
+    } else {
+      throw new FetchError("Failed to fetch ingredients", 500); // Default to 500 if status is not set
+    }
   }
 };
