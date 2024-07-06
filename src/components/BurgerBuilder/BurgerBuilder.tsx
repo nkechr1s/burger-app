@@ -41,7 +41,6 @@ const BurgerBuilder = () => {
         index: burgerIngredients?.length,
       },
     ];
-    console.log(updatedIngredients)
     setBurgerIngredients(updatedIngredients);
   };
 
