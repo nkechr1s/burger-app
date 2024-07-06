@@ -100,7 +100,7 @@ const BurgerBuilder = () => {
             </div>
           </div>
         </div>
-        <h2>Ingredients</h2>
+        <h2 aria-label="Ingredients">Ingredients</h2>
         <ul className="ingredients_items">
           {Array.isArray(ingredients) &&
             ingredients.map((ingredient) => (
