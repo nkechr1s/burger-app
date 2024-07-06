@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import { fetchIngredients } from "../../lib/api/ingredients";
 import { useAuth } from "../../context";
 import { Ingredient } from "../../types";
-
+import { Loader } from "../../components";
 const BurgerBuilder = () => {
   const auth = useAuth();
 
@@ -18,7 +18,7 @@ const BurgerBuilder = () => {
     }
   );
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loader />;
   if (error) return <div>Error: {error.message}</div>;
 
   return (
