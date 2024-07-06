@@ -1,5 +1,5 @@
 import { ModalProps } from "../../types";
-
+import "./Modal.css";
 const Modal = ({ title, text, isOpen, children }: ModalProps) => {
   return (
     <>
