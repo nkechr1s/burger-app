@@ -35,7 +35,7 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
     } catch (error) {
       if (error instanceof Error) {
         toast.error(error.message || "Something went wrong");
-        throw new Error("Failed to log in");
+        throw new Error("Failed to logged in");
       }
     }
   };
