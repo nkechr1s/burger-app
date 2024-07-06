@@ -7,7 +7,6 @@
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border: 1px solid #e1e1ef;
-  flex: 1;
 }
 
 .burger-builder {
@@ -95,4 +94,24 @@ ul.ingredients_items {
   background-color: #ccc;
   color: #aaa;
   cursor: not-allowed;
+}
+
+.burger-preview::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f0f0f0;
+}
+
+
+.burger-preview::-webkit-scrollbar-thumb {
+    background-color: #c0c0c0;
+    border-radius: 5px;
+    border: 2px solid #f0f0f0;
+}
+
+.burger-preview::-webkit-scrollbar-thumb:hover {
+    background-color: #a0a0a0;
+}
+
+.burger-preview::-webkit-scrollbar-corner {
+    background-color: #f0f0f0; 
 }
