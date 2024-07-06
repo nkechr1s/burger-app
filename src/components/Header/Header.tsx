@@ -27,6 +27,7 @@ const Header = () => {
                 alt="logout"
                 onClick={toggleModal}
                 className="logout-button"
+                title="Logout"
               />
             </>
           )}
