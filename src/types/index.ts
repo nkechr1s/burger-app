@@ -4,6 +4,9 @@ export interface AuthContextType {
   login: (data: { name: string; password: string }) => Promise<void>;
   logout: () => void;
 }
+export interface AuthProviderProps {
+  children: React.ReactNode;
+}
 
 export interface ModalProps {
   title?: string;
