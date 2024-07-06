@@ -1,4 +1,4 @@
-li.ingredient_item {
+li.ingredient-item {
   display: flex;
   flex-direction: column;
   background: white;
@@ -12,24 +12,24 @@ li.ingredient_item {
   position: relative;
 }
 
-li.ingredient_item:hover {
+li.ingredient-item:hover {
   border-color: var(--primary-color);
 }
-li.ingredient_item:hover {
+li.ingredient-item:hover {
   cursor: pointer;
 }
 
-img.ingredient_item__image {
+img.ingredient__item-image {
   max-width: 120px;
 }
 
-.ingredient_item__name {
+.ingredient__item-name {
   font-size: 20px;
   font-weight: 700;
   margin-top: 10px;
 }
 
-.ingredient_item__container {
+.ingredient__item-container {
   min-height: 90px;
   display: flex;
   align-items: center;
