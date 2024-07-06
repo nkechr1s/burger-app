@@ -31,10 +31,12 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
         navigate("/");
         return;
       }
-      throw new Error(res.message);
-    } catch (err) {
-      toast.error("Incorrect username or password");
-      console.error(err);
+      throw new Error(res);
+    } catch (error) {
+      if (error instanceof Error) {
+        toast.error(error.message);
+        throw new Error("Failed to log in");
+      }
     }
   };
 
