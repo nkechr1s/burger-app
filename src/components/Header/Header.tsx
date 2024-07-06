@@ -17,22 +17,20 @@ const Header = () => {
   };
   return (
     <>
-      <div className="container">
-        <header className="header">
-          <h1 aria-label="A cool burger app">A cool burger app</h1>
-          {auth.isAuthenticated && (
-            <>
-              <img
-                src="logout.svg"
-                alt="logout"
-                onClick={toggleModal}
-                className="logout-button"
-                title="Logout"
-              />
-            </>
-          )}
-        </header>
-      </div>
+      <header className="header">
+        <h1 aria-label="A cool burger app">A cool burger app</h1>
+        {auth.isAuthenticated && (
+          <>
+            <img
+              src="logout.svg"
+              alt="logout"
+              onClick={toggleModal}
+              className="logout-button"
+              title="Logout"
+            />
+          </>
+        )}
+      </header>
       {auth.isAuthenticated && (
         <Modal
           isOpen={isModalOpen}
@@ -48,7 +46,11 @@ const Header = () => {
             >
               logout
             </button>
-            <button title="cancel" onClick={toggleModal} className="secondary-button">
+            <button
+              title="cancel"
+              onClick={toggleModal}
+              className="secondary-button"
+            >
               Cancel
             </button>
           </div>

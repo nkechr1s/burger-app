@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./LoginForm.css";
 import { useAuth } from "../../context";
 
 const LoginForm = () => {
@@ -26,7 +27,8 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmitEvent}>
+    <form onSubmit={handleSubmitEvent} className="login-form">
+      <h1 aria-label="Login to your account" className="form-title">Login to your account</h1>
       <div className="form_control">
         <label htmlFor="name">Email:</label>
         <input
@@ -50,7 +52,7 @@ const LoginForm = () => {
         />
       </div>
       <button type="submit" className="primary-button">
-        Submit
+        Login
       </button>
     </form>
   );

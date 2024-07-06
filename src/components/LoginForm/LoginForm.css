@@ -1,0 +1,44 @@
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-form .form_control {
+    margin-bottom: 15px;
+    max-width: 380px;
+  }
+  
+  .login-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .login-form input[type="text"],
+  .login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display:inline-block;
+  }
+  
+  .login-form input[type="text"]:focus,
+  .login-form input[type="password"]:focus {
+    outline: none;
+    border-color: #00b485;
+    box-shadow: 0 0 5px rgba(0, 180, 133, 0.5);
+  }
+
+  .login-form button {
+    margin-top:20px;
+  }
+
+  .form-title{
+    font-size:28px;
+  }
