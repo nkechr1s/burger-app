@@ -30,6 +30,7 @@ const BurgerBuilder = () => {
           toast.error("Failed to fetch ingredients.");
         }
       },
+    staleTime: Infinity,
     }
   );
 
