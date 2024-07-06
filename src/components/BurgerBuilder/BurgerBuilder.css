@@ -20,9 +20,6 @@ ul.ingredients_items {
   justify-content: center;
 }
 
-.burger-preview {
-  margin-bottom: 40px;
-}
 
 .ingredients {
   flex: 1;
@@ -39,6 +36,10 @@ ul.ingredients_items {
 
 .burger-preview {
   flex: 1;
+  max-height: 350px;
+  overflow: auto;
+  width: 100%;
+  margin-bottom:40px;
 }
 
 .burger {
@@ -59,7 +60,6 @@ ul.ingredients_items {
 
 .burger__ingredient {
   position: relative;
-  margin-bottom: 10px;
 }
 
 .burger__ingredient-image {
