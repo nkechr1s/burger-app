@@ -46,3 +46,19 @@
   .login-form input.error {
     border-color: #ff6347; 
   }
+
+  .login-form .password-input-container {
+    position: relative;
+  }
+  
+  .login-form .password-toggle-icon {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .login-form .password-toggle-icon:hover {
+    color: #007852;
+  }

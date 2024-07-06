@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import "./LoginForm.css";
 import { useAuth } from "../../context";
 import toast from "react-hot-toast";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
 const LoginForm = () => {
   const auth = useAuth();
+  const [showPassword, setShowPassword] = useState(false);
   const [input, setInput] = useState({
     name: "",
     password: "",
@@ -45,6 +47,9 @@ const LoginForm = () => {
     }));
   };
 
+  const togglePasswordVisibility = () => {
+    setShowPassword((prev) => !prev);
+  };
   return (
     <form onSubmit={handleSubmitEvent} className="login-form">
       {/* I would suggest to use a react library for forms like react-hook form*/}
@@ -64,14 +69,21 @@ const LoginForm = () => {
       </div>
       <div className="form_control">
         <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={input.password}
-          onChange={handleInput}
-          className={error.password ? "error" : ""}
-        />
+        <div className="password-input-container">
+          <input
+            type={showPassword ? "text" : "password"}
+            id="password"
+            name="password"
+            value={input.password}
+            onChange={handleInput}
+            className={error.password ? "error" : ""}
+          />
+          {showPassword ? (
+            <FiEyeOff className="password-toggle-icon" onClick={togglePasswordVisibility} />
+          ) : (
+            <FiEye className="password-toggle-icon" onClick={togglePasswordVisibility} />
+          )}
+        </div>
       </div>
       <button type="submit" className="primary-button">
         Login
