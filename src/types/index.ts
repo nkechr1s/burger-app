@@ -11,3 +11,10 @@ export interface ModalProps {
   isOpen: boolean;
   children?: React.ReactNode;
 }
+
+export interface Ingredient {
+  id: number;
+  name: string;
+  quantity: number;
+  unit: string;
+}
