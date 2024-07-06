@@ -22,28 +22,37 @@ const Header = () => {
           <h1 aria-label="A cool burger app">A cool burger app</h1>
           {auth.isAuthenticated && (
             <>
-              <button onClick={toggleModal} className="btn-submit">
-                Logout
-              </button>
+              <img
+                src="logout.svg"
+                alt="logout"
+                onClick={toggleModal}
+                className="logout-button"
+              />
             </>
           )}
         </header>
       </div>
-      <Modal
-        isOpen={isModalOpen}
-        title="Logout Confirmation"
-        text="Are you sure you want to logout?"
-      >
-        {/* TODO: Create a reusable button component */}
-        <div className="modal-buttons">
-        <button title="logout" onClick={handleLogout} className="btn-submit">
-          logout
-        </button>
-        <button title="cancel" onClick={toggleModal} className="btn-cancel">
-          Cancel
-        </button>
-        </div>
-      </Modal>
+      {auth.isAuthenticated && (
+        <Modal
+          isOpen={isModalOpen}
+          title="Logout Confirmation"
+          text="Are you sure you want to logout?"
+        >
+          {/* TODO: Create a reusable button component */}
+          <div className="modal-buttons">
+            <button
+              title="logout"
+              onClick={handleLogout}
+              className="primary-button"
+            >
+              logout
+            </button>
+            <button title="cancel" onClick={toggleModal} className="secondary-button">
+              Cancel
+            </button>
+          </div>
+        </Modal>
+      )}
     </>
   );
 };

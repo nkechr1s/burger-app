@@ -14,5 +14,65 @@ code {
 
 .container {
   max-width: 1400px;
-  margin:0 auto;
+  margin: 0 auto;
+}
+
+.primary-button {
+  color: rgb(20, 20, 20);
+  background-color: rgb(0, 180, 133);
+  border: 2px solid rgb(0, 180, 133);
+  border-radius: 8px;
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  padding: 1rem;
+  cursor: pointer;
+  width:100%;
+}
+
+.primary-button:hover,
+.primary-button:focus {
+  background-color: #00b485;
+  border-color: #00b485;
+  color: #fff;
+}
+
+.primary-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.secondary-button {
+  color: rgb(0, 180, 133);
+  background-color: transparent;
+  border: 2px solid rgb(0, 180, 133);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  padding: 1rem;
+  cursor: pointer;
+  width:100%;
+}
+
+.secondary-button:hover,
+.secondary-button:focus {
+  background-color: rgb(0, 180, 133);
+  color: #fff;
+}
+
+.secondary-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }

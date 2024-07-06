@@ -7,4 +7,9 @@
   display:flex;
   justify-content: space-between;
   margin-top:40px;
+  gap:10px;
+}
+
+.logout-button{
+  cursor:pointer;
 }
