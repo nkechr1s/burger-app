@@ -1,13 +1,10 @@
-import { createBrowserRouter } from "react-router-dom";
-import { Home, Login } from "./pages";
+import { Navigate, Outlet } from "react-router-dom";
+import { useAuth } from "./context";
 
-export const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-]);
+const PrivateRoute = () => {
+  const user = useAuth();
+  if (!user.token) return <Navigate to="/login" />;
+  return <Outlet />;
+};
+
+export default PrivateRoute;

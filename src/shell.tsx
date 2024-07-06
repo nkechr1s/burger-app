@@ -1,17 +1,26 @@
-import { RouterProvider } from "react-router-dom";
-import { router } from "./routes";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Home, Login } from "./pages";
 import { Header } from "./components";
 import { Toaster } from "react-hot-toast";
+import { AuthProvider } from "./context";
+import PrivateRoute from "./routes";
 
 const Shell = () => {
   return (
-    <>
-      <Header />
-      <main className="container">
-        <RouterProvider router={router} />
-      </main>
-      <Toaster />
-    </>
+    <Router>
+      <AuthProvider>
+        <Header />
+        <main className="container">
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route element={<PrivateRoute />}>
+              <Route path="/" element={<Home />} />
+            </Route>
+          </Routes>
+        </main>
+        <Toaster />
+      </AuthProvider>
+    </Router>
   );
 };
 
