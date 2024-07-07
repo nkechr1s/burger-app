@@ -34,3 +34,9 @@ img.ingredient__item-image {
   display: flex;
   align-items: center;
 }
+
+@media(max-width:767px){
+  .ingredient__item-name {
+    font-size:14px;
+  }
+}

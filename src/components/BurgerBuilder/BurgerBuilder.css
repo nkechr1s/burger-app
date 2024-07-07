@@ -114,3 +114,22 @@ ul.ingredients_items {
 .burger-preview::-webkit-scrollbar-corner {
   background-color: #f0f0f0;
 }
+
+@media (max-width: 767px) {
+  ul.ingredients_items {
+    flex-direction: column;
+    width: 100%;
+  }
+  .burger-builder__title h1 {
+    font-size: 20px;
+  }
+  .burger__bun {
+    width: 200px;
+  }
+  .burger-builder {
+    padding: 20px;
+  }
+  .ingredients h2 {
+    font-size:18px;
+  }
+}
