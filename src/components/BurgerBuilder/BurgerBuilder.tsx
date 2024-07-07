@@ -19,7 +19,7 @@ const BurgerBuilder = () => {
     ["ingredients", auth.token],
     () => fetchIngredients(auth.token),
     {
-      enabled: !!auth.token,
+      enabled: auth.isAuthenticated,
       onError: (error: any) => {
         if (error.status === 401) {
           toast.error("Session expired");
