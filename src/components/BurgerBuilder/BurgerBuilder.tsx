@@ -1,10 +1,9 @@
 import { useQuery } from "react-query";
 import { fetchIngredients } from "../../lib/api/ingredients";
-import { useAuth } from "../../context";
+import { useAuth,useBurgerBuilder } from "../../context";
 import { Ingredient as IngredientProps } from "../../types";
 import { Loader, Ingredient } from "../../components";
 import toast from "react-hot-toast";
-import { useBurgerBuilder } from "../../context";
 import "./BurgerBuilder.css";
 
 const BurgerBuilder = () => {

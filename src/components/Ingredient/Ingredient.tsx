@@ -9,7 +9,6 @@ const Ingredient = ({ id, name, src, onClick }: IngredientProps) => {
             className="ingredient__item-image"
             src={`${process.env.REACT_APP_API_URL}/img/${src}`}
             alt={`${name}-${id}`}
-            title={name}
             loading="lazy"
           />
         </div>
