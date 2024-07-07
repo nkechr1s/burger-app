@@ -57,7 +57,7 @@ const LoginForm = () => {
         🔐 Login to your account
       </h1>
       <div className="form_control">
-        <label htmlFor="name">Email:</label>
+        <label htmlFor="name">Email</label>
         <input
           type="text"
           id="name"
@@ -68,7 +68,7 @@ const LoginForm = () => {
         />
       </div>
       <div className="form_control">
-        <label htmlFor="password">Password:</label>
+        <label htmlFor="password">Password</label>
         <div className="password-input-container">
           <input
             type={showPassword ? "text" : "password"}
