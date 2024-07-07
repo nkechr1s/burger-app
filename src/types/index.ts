@@ -22,3 +22,7 @@ export interface Ingredient {
   src: string;
   onClick: () => void;
 }
+
+export interface State {
+  burgerIngredients: Ingredient[];
+}

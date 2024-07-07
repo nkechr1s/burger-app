@@ -1,5 +1,5 @@
 import { useContext, createContext, useState } from "react";
-import { AuthContextType, AuthProviderProps } from "../types";
+import { AuthContextType, AuthProviderProps } from "../../types";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
