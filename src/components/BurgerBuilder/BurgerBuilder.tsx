@@ -1,17 +1,17 @@
-import { useState } from "react";
 import { useQuery } from "react-query";
 import { fetchIngredients } from "../../lib/api/ingredients";
 import { useAuth } from "../../context";
 import { Ingredient as IngredientProps } from "../../types";
 import { Loader, Ingredient } from "../../components";
 import toast from "react-hot-toast";
+import { useBurgerBuilder } from "../../context";
 import "./BurgerBuilder.css";
 
 const BurgerBuilder = () => {
   const auth = useAuth();
-  const [burgerIngredients, setBurgerIngredients] = useState<IngredientProps[]>(
-    []
-  );
+  const { state, dispatch } = useBurgerBuilder();
+  const { burgerIngredients } = state;
+
   const {
     data: ingredients,
     isLoading,
@@ -30,29 +30,20 @@ const BurgerBuilder = () => {
           toast.error("Failed to fetch ingredients.");
         }
       },
-    staleTime: Infinity,
+      staleTime: Infinity,
     }
   );
 
   const addIngredientToBurger = (ingredient: IngredientProps) => {
-    const updatedIngredients = [
-      ...burgerIngredients,
-      {
-        ...ingredient,
-        index: burgerIngredients?.length,
-      },
-    ];
-    setBurgerIngredients(updatedIngredients);
+    dispatch({ type: "ADD_INGREDIENT", payload: ingredient });
   };
 
   const removeIngredientFromBurger = (index: number) => {
-    const updatedIngredients = burgerIngredients.filter(
-      (ing) => ing.index !== index
-    );
-    setBurgerIngredients(updatedIngredients);
+    dispatch({ type: "REMOVE_INGREDIENT", payload: index });
   };
+
   const clearAllIngredients = () => {
-    setBurgerIngredients([]);
+    dispatch({ type: "CLEAR_INGREDIENTS" });
   };
 
   if (isLoading) return <Loader />;
@@ -67,7 +58,7 @@ const BurgerBuilder = () => {
         <button
           className="clear-all-button"
           onClick={clearAllIngredients}
-          disabled={burgerIngredients?.length === 0}
+          disabled={burgerIngredients.length === 0}
         >
           Clear All
         </button>
