@@ -4,16 +4,16 @@ const Ingredient = ({ id, name, src, onClick }: IngredientProps) => {
   return (
     <li className="ingredient-item" title={name} onClick={onClick} data-testid="ingredient">
       {src && (
-        <div className="ingredient__item-container">
+        <div className="ingredient-item-container">
           <img
-            className="ingredient__item-image"
+            className="ingredient-item-image"
             src={`${process.env.REACT_APP_API_URL}/img/${src}`}
             alt={`${name}-${id}`}
             loading="lazy"
           />
         </div>
       )}
-      {name && <div className="ingredient__item-name">{name}</div>}
+      {name && <div className="ingredient-item-name">{name}</div>}
     </li>
   );
 };

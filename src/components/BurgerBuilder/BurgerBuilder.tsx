@@ -52,7 +52,7 @@ const BurgerBuilder = () => {
 
   return (
     <div className="burger-builder" data-testid="burger-builder">
-      <div className="burger-builder__title">
+      <div className="burger-builder-title">
         <h1 aria-label="Build your burger">Build your burger</h1>
         <button
           className="clear-all-button"
@@ -65,28 +65,28 @@ const BurgerBuilder = () => {
       <div className="ingredients">
         <div className="burger-preview">
           <div className="burger">
-            <div className="burger__bun top">
+            <div className="burger-bun top">
               <img
                 src={`${process.env.REACT_APP_API_URL}/img/bun_top.png`}
                 alt="Top Bun"
-                className="burger__bun-image"
+                className="burger-bun-image"
               />
             </div>
             {burgerIngredients.map((ingredient) => (
-              <div className="burger__ingredient" key={ingredient.index}>
+              <div className="burger-ingredient" key={ingredient.index}>
                 <img
                   src={`${process.env.REACT_APP_API_URL}/img/${ingredient.src}`}
                   alt={ingredient.name}
-                  className="burger__ingredient-image"
+                  className="burger-ingredient-image"
                   onClick={() => removeIngredientFromBurger(ingredient.index)}
                 />
               </div>
             ))}
-            <div className="burger__bun bottom">
+            <div className="burger-bun bottom">
               <img
                 src={`${process.env.REACT_APP_API_URL}/img/bun_bottom.png`}
                 alt="Bottom Bun"
-                className="burger__bun-image"
+                className="burger-bun-image"
               />
             </div>
           </div>

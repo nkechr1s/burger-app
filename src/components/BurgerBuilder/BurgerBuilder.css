@@ -44,26 +44,26 @@ ul.ingredients_items {
   align-items: center;
 }
 
-.burger__bun {
+.burger-bun {
   width: 240px;
 }
 
-.burger__bun-image {
+.burger-bun-image {
   width: 100%;
   height: auto;
 }
 
-.burger__ingredient {
+.burger-ingredient {
   position: relative;
   margin: -5px;
 }
 
-.burger__ingredient-image {
+.burger-ingredient-image {
   width: 200px;
   cursor: pointer;
 }
 
-.burger__ingredient-name {
+.burger-ingredient-name {
   margin-top: 5px;
 }
 
@@ -83,7 +83,7 @@ ul.ingredients_items {
   background-color: #e53935;
 }
 
-.burger-builder__title {
+.burger-builder-title {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
@@ -120,10 +120,10 @@ ul.ingredients_items {
     flex-direction: column;
     width: 100%;
   }
-  .burger-builder__title h1 {
+  .burger-builder-title h1 {
     font-size: 20px;
   }
-  .burger__bun {
+  .burger-bun {
     width: 200px;
   }
   .burger-builder {

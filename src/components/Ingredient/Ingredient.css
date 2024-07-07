@@ -19,24 +19,24 @@ li.ingredient-item:hover {
   cursor: pointer;
 }
 
-img.ingredient__item-image {
+img.ingredient-item-image {
   max-width: 120px;
 }
 
-.ingredient__item-name {
+.ingredient-item-name {
   font-size: 20px;
   font-weight: 700;
   margin-top: 10px;
 }
 
-.ingredient__item-container {
+.ingredient-item-container {
   min-height: 90px;
   display: flex;
   align-items: center;
 }
 
 @media(max-width:767px){
-  .ingredient__item-name {
+  .ingredient-item-name {
     font-size:14px;
   }
 }
