@@ -33,3 +33,19 @@ test("it should count the array of ingredients", async () => {
   const burgerIngredients = screen.queryAllByAltText(/.*/); 
   expect(burgerIngredients.length).toBe(2);
 });
+
+test("renders the top and bottom buns", async () => {
+  render(<BurgerBuilderWithProvider />);
+  
+
+  const topBun = screen.getByRole('img', {
+    name: /top bun/i
+  })
+
+  const bottomBun = screen.getByRole('img', {
+    name: /bottom bun/i
+  })
+
+  expect(topBun).toBeInTheDocument();
+  expect(bottomBun).toBeInTheDocument();
+});
