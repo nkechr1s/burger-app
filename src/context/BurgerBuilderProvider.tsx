@@ -6,13 +6,11 @@ const ADD_INGREDIENT = "ADD_INGREDIENT";
 const REMOVE_INGREDIENT = "REMOVE_INGREDIENT";
 const CLEAR_INGREDIENTS = "CLEAR_INGREDIENTS";
 
-// Define actions
 type Action =
   | { type: typeof ADD_INGREDIENT; payload: IngredientProps }
   | { type: typeof REMOVE_INGREDIENT; payload: number }
   | { type: typeof CLEAR_INGREDIENTS };
 
-// Define the initial state and reducer
 interface State {
   burgerIngredients: IngredientProps[];
 }
