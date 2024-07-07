@@ -91,8 +91,9 @@ const BurgerBuilder = () => {
             </div>
           </div>
         </div>
-        <h2 aria-label="Ingredients">Ingredients</h2>
-        <ul className="ingredients_items">
+        <div className="ingredients-items-list">
+        <h2 aria-label="Ingredients">Choose your ingredients</h2>
+        <ul className="ingredients-items">
           {Array.isArray(ingredients) &&
             ingredients.map((ingredient) => (
               <Ingredient
@@ -102,6 +103,7 @@ const BurgerBuilder = () => {
               />
             ))}
         </ul>
+        </div>
       </div>
     </div>
   );

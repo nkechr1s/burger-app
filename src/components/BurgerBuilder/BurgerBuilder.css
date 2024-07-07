@@ -1,12 +1,18 @@
 .ingredients {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 20px;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border: 1px solid #e1e1ef;
+}
+
+.ingredients-items-list {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }
 
 .burger-builder {
@@ -15,24 +21,26 @@
   padding: 20px 40px;
 }
 
-ul.ingredients_items {
+ul.ingredients-items {
   display: flex;
   gap: 10px;
   justify-content: center;
+  flex-direction:column;
+  padding: 0 0 0 20px;
 }
 
-.ingredients_items {
+.ingredients-items {
   list-style-type: none;
   padding: 0;
 }
 
-.ingredients_items li {
+.ingredients-items li {
   margin-bottom: 10px;
 }
 
 .burger-preview {
   flex: 1;
-  max-height: 350px;
+  max-height: 420px;
   overflow: auto;
   width: 100%;
   margin-bottom: 40px;
@@ -114,9 +122,13 @@ ul.ingredients_items {
 .burger-preview::-webkit-scrollbar-corner {
   background-color: #f0f0f0;
 }
+.ingredients-items-list h2 {
+  margin-bottom: unset;
+  font-size: 20px;
+}
 
 @media (max-width: 767px) {
-  ul.ingredients_items {
+  ul.ingredients-items {
     flex-direction: column;
     width: 100%;
   }
@@ -131,5 +143,8 @@ ul.ingredients_items {
   }
   .ingredients h2 {
     font-size:18px;
+  }
+  .ingredients{
+    flex-direction:column;
   }
 }
