@@ -21,7 +21,7 @@ const Header = () => {
       <header className="header" data-testid="header">
         <div className="header-title">
           <FaHamburger />
-          <h1 aria-label="A cool burger app">Burger Now!</h1>
+          <h1 aria-label="Burger Now">Burger Now!</h1>
         </div>
         {auth.isAuthenticated && (
           <>
@@ -30,7 +30,6 @@ const Header = () => {
               alt="logout"
               onClick={toggleModal}
               className="logout-button"
-              title="Logout"
               data-testid="toggle-modal-button"
             />
           </>
