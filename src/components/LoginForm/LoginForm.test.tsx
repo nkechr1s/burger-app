@@ -27,7 +27,7 @@ beforeEach(() => {
     // Mock useAuth to return mockLogin function
    (useAuth as jest.MockedFunction<typeof useAuth>).mockReturnValue({
        login: mockLogin,
-       isAuthenticated: false, // Mock other necessary context values here
+       isAuthenticated: false,
        logout: jest.fn(),
    } as unknown as AuthContextType);
 });
