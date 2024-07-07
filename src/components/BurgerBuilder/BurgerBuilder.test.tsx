@@ -2,7 +2,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import BurgerBuilder from "./BurgerBuilder";
-import { AuthProvider } from "../../context";
+import { AuthProvider, BurgerBuilderProvider } from "../../context";
 
 const queryClient = new QueryClient();
 
@@ -11,7 +11,9 @@ const BurgerBuilderWithProvider = () => {
     <QueryClientProvider client={queryClient}>
       <MemoryRouter>
         <AuthProvider>
-          <BurgerBuilder />
+          <BurgerBuilderProvider>
+            <BurgerBuilder />
+          </BurgerBuilderProvider>
         </AuthProvider>
       </MemoryRouter>
     </QueryClientProvider>
@@ -26,25 +28,24 @@ test("renders the Burger Builder component", async () => {
 
 test("it should count the array of ingredients", async () => {
   render(<BurgerBuilderWithProvider />);
-  
+
   // eslint-disable-next-line testing-library/prefer-find-by
   await waitFor(() => screen.getByText("Ingredients"));
 
-  const burgerIngredients = screen.queryAllByAltText(/.*/); 
+  const burgerIngredients = screen.queryAllByAltText(/.*/);
   expect(burgerIngredients.length).toBe(2);
 });
 
 test("renders the top and bottom buns", async () => {
   render(<BurgerBuilderWithProvider />);
-  
 
-  const topBun = screen.getByRole('img', {
-    name: /top bun/i
-  })
+  const topBun = screen.getByRole("img", {
+    name: /top bun/i,
+  });
 
-  const bottomBun = screen.getByRole('img', {
-    name: /bottom bun/i
-  })
+  const bottomBun = screen.getByRole("img", {
+    name: /bottom bun/i,
+  });
 
   expect(topBun).toBeInTheDocument();
   expect(bottomBun).toBeInTheDocument();
